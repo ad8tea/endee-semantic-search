@@ -1,0 +1,1 @@
+Machine learning models can improve financial forecasting by identifying hidden patterns in historical market data.
