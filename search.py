@@ -36,9 +36,13 @@ def cosine_similarity(a, b):
 # Calculate similarity scores between query and each document
 similarities = [cosine_similarity(query_embedding, doc_emb) for doc_emb in doc_embeddings]
 
-# Find the index of the best matching document
-best_idx = np.argmax(similarities)
+# Get indices of documents sorted by similarity (highest first)
+top_k = 5
+sorted_indices = np.argsort(similarities)[::-1][:top_k]
 
-print(f"\nBest matching document: {doc_names[best_idx]}")
-print(f"Similarity score: {similarities[best_idx]:.4f}")
-print(f"Content:\n{documents[best_idx]}")
+print("\nTop Matching Documents:")
+
+for rank, idx in enumerate(sorted_indices, start=1):
+    print(f"\nDocument {rank}: {doc_names[idx]}")
+    print(f"Similarity Score: {similarities[idx]:.4f}")
+    print(f"Content:\n{documents[idx]}")
