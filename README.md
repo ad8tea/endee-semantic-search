@@ -1,10 +1,33 @@
-# Semantic Search System using Transformer Embeddings
+# Endee Semantic Search Demo
+This project demonstrates a simple semantic search system built using transformer embeddings and inspired by vector database principles used in Endee.
 
-## Project Overview
+It converts text documents into vector embeddings and retrieves the most relevant result (Top-1) based on semantic similarity.
 
-This project implements a semantic search system using transformer-based embeddings to retrieve the most relevant documents based on meaning rather than keyword matching.
+---
 
-The system encodes text documents into vector embeddings and performs similarity search using cosine similarity to return the Top-5 most relevant results for a user query.
+## Overview
+
+Traditional keyword search matches exact words.
+Semantic search understands meaning.
+
+This project:
+
+Converts documents into embeddings using a transformer model
+
+Stores embeddings as vectors
+
+Computes cosine similarity
+
+Returns the most relevant document (Top-1)
+
+---
+
+## Tech Stack
+1. Python
+2. sentence-transformers
+3. NumPy
+4. Transformer Model: all-MiniLM-L6-v2
+5. Similarity Metric: Cosine similarity
 
 ---
 
@@ -42,17 +65,8 @@ The system encodes text documents into vector embeddings and performs similarity
 ```
 endee-semantic-search/
 │
-├── data/
-│   └── sample_docs/
-│       ├── doc1.txt
-│       ├── doc2.txt
-│       ├── doc3.txt
-│       ├── doc4.txt
-│       └── doc5.txt
-│
 ├── search.py
-├── requirements.txt
-└── README.md
+├── README.md
 ```
 
 ---
@@ -76,7 +90,7 @@ venv\Scripts\activate   # Windows
 ### 3. Install Dependencies
 
 ```
-pip install -r requirements.txt
+pip install sentence-transformers numpy
 ```
 
 ### 4. Run Semantic Search
@@ -96,32 +110,31 @@ health
 ## Example Output
 
 ```
-Top Matching Documents:
+Top Matching Document:
 
-Document 1: doc1.txt
-Similarity Score: 0.5290
-
-Document 2: doc3.txt
-Similarity Score: 0.2851
-
-Document 3: doc2.txt
-Similarity Score: 0.1480
-
-Document 4: doc5.txt
-Similarity Score: 0.0386
-
-Document 5: doc4.txt
-Similarity Score: 0.0159
+Score: 0.5298
+Text: Staying healthy requires regular exercise and proper nutrition.
 ```
 
 ---
 
-## Technical Details
+## How It Works
 
-- Embeddings generated using SentenceTransformers
-- Cosine similarity used for ranking
-- NumPy used for vector computations
-- Fully local implementation (no external API required)
+- Documents are encoded into dense vectors using a transformer model.
+- The query is converted into a vector.
+- Cosine similarity is computed between the query vector and document vectors.
+- The document with the highest similarity score (Top-1) is returned.
+
+---
+
+## Purpose
+This project demonstrates:
+
+Understanding of semantic search
+Use of transformer embeddings
+Vector similarity computation
+Retrieval system design
+Application of vector database concepts
 
 ---
 
@@ -137,6 +150,5 @@ Similarity Score: 0.0159
 
 ## Author
 
-Aditi
-
-AI / Machine Learning Enthusiast
+Aditi Thakur
+GitHub: https://github.com/ad8tea
