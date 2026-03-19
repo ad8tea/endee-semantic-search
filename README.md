@@ -151,4 +151,4 @@ Application of vector database concepts
 ## Author
 
 Aditi Thakur
-GitHub: https://github.com/ad8tea
+GitHub: https://www.github.com/ad8tea
